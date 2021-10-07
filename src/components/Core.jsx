@@ -1,7 +1,15 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+} from 'react-router-dom';
 
 export const Headera = () => {
     return (
+    <Router>
+
       <header className="text-gray-100 body-font bg-gray-800">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -18,15 +26,24 @@ export const Headera = () => {
             </svg> 
             <span className="ml-3 text-xl text-red-400 font-mono">Histo</span>
           </a>
-          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-2xl cursor-pointer text-base justify-center font-mono">
-            <a className="mr-5 hover:text-red-400">Fandraisana</a>
-            <a className="mr-5 hover:text-red-400">Tantara</a>
-            <a className="mr-5 hover:text-red-400">Fivoarana</a>
-            <a className="mr-5 hover:text-red-400">Izahay</a>
+          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-2xl cursor-pointer  justify-center font-mono">
+            <Link to="/" className="mr-5 hover:text-red-400">Fandraisana</Link>
+            <Link to="/tantara" className="mr-5 hover:text-red-400">Tantara</Link>
+            <Link className="mr-5 hover:text-red-400">Fivoarana</Link>
+            <Link className="mr-5 hover:text-red-400">Izahay</Link>
           </nav>
 
         </div>
       </header>
+
+      <Switch>
+        <Route exact path="/" component={Hero} />
+        <Route exact path="/tantara" component={Tantara} />
+      </Switch>
+
+
+
+    </Router>
     );
 }
 
@@ -78,6 +95,50 @@ export const Hero = () => {
     );
 }
 
+export const Tantara = () => {
+  return (
+    <section className="text-gray-600 body-font">
+      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center border-red-600">
+        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+          <img
+            className="object-cover object-center rounded"
+            alt="hero"
+            src="https://cdn.britannica.com/46/2246-004-17A6E838/Flag-Madagascar.jpg"
+          />
+        </div>
+        <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+           Tantara Malagasy
+          </h1>
+          <p className="mb-8 leading-relaxed">
+            Copper mug try-hard pitchfork pour-over freegan heirloom neutra
+            air plant cold-pressed tacos poke beard tote bag. Heirloom echo
+            park mlkshk tote bag selvage hot chicken authentic tumeric
+            truffaut hexagon try-hard chambray.
+          </p>
+          <div className="flex  justify-center">
+            <button className="inline-flex transition duration-300 ease-in-out animate-bounce text-white bg-pink-500 border-0 py-4 rounded-full px-10 focus:outline-none hover:bg-pink-600  text-2xl">
+              Hijery tantara
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export const Footer = (props) => {
   return (
