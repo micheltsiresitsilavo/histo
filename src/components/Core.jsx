@@ -7,7 +7,7 @@ import {
   NavLink,
   useParams,
 } from "react-router-dom";
-import http from "./http-common";
+import http from "../http-common";
 
 export const Headera = () => {
   return (
