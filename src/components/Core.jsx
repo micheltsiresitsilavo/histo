@@ -184,8 +184,10 @@ export const Tantara = () => {
     const getData = async () => {
       const res = await Axios.get(
         "https://histoservera.herokuapp.com/presidents"
+        
       );
       setData(res.data);
+      console.log(res);
     };
     getData();
   }, []);
