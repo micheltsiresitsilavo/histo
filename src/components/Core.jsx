@@ -7,7 +7,7 @@ import {
   NavLink,
   useParams,
 } from "react-router-dom";
-import http from "../http-common";
+import Axios from "axios";
 
 export const Headera = () => {
   return (
@@ -182,7 +182,9 @@ export const Tantara = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await http.get("/presidents");
+      const res = await Axios.get(
+        "https://histoservera.herokuapp.com/presidents"
+      );
       setData(res.data);
     };
     getData();
@@ -377,7 +379,9 @@ export const Deta = () => {
 
   useEffect(() => {
     const dataBack = async () => {
-      const resp = await http.get(`/presidents/${id}`);
+      const resp = await Axios.get(
+        `https://histoservera.herokuapp.com/presidents/${id}`
+      );
       if (resp.data.leftOffice === "Amperinasa") {
         setdataOne(resp.data);
         setisVelo(true);
