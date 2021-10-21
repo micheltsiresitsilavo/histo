@@ -1,14 +1,12 @@
-import { Footer, Headera, Hero } from './components/Core';
-
+import { Footer, Headera } from "./components/Core";
 
 const App = () => {
-
   return (
     <div className="md:container md:mx-auto bg-gray-200">
-        <Headera />
-        <Footer />
+      <Headera />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
